@@ -5,11 +5,12 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Game
+public class Game extends GameLibrary
 {
     private String name;
-    private double rating;
+    private int rating;
     private String[] tags;
+    private double price;
 
     public Game(String name, String[] tags) {
         this.name = name;

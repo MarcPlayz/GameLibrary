@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Scanner;
 
 /**
  * Write a description of class Library here.
@@ -8,6 +9,17 @@ import java.util.HashSet;
  */
 public class GameLibrary
 {
-    private int numGames;
+    private int numGames = 0;
+    private double libraryValue = 0.0;
     private HashSet<Game> library;
+    
+    private Scanner sc;
+    
+    public GameLibrary() {
+        sc = new Scanner(System.in);
+    }
+    
+    public void StartLibrary() {
+        System.out.println("");
+    }
 }
