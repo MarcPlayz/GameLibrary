@@ -15,11 +15,27 @@ public class Game extends GameLibrary
     public Game(String name, String[] tags) {
         this.name = name;
         this.tags = tags;
+        this.rating = 0;
     }
-
-    public void getTags() {
+    
+    public String getName() {
+        return name;
+    }
+    
+    public int getRating() {
+        return rating;
+    }
+    
+    public String getTags() {
+        String t = "";
         for (int i = 0; i < tags.length; i++) {
-            System.out.println(tags[i].toString());
+            if (i == 0) {
+                t = t + tags[i].toString();
+            }
+            else {
+                t = t + ", " + tags[i].toString();
+            }            
         }
+        return t;
     }
 }
