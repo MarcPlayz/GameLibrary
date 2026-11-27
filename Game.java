@@ -69,7 +69,12 @@ public class Game{
     public int getRating() {
         return rating;
     }
-
+    
+    public void setRating(int rating){
+        this.rating = rating;
+        
+    }
+    
     public String getGenreTags() {
         Iterator<Genre> it = genreTags.iterator();
         String t = "";

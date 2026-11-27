@@ -1,33 +1,47 @@
-
-/**
- * Write a description of class Community here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
 public class Community extends GameLibrary
 {
-    // instance variables - replace the example below with your own
-    private int x;
-
-    /**
-     * Constructor for objects of class Community
-     */
-    public Community()
-    {
-        // initialise instance variables
-        x = 0;
+    // private Game gameName = new Game(); // needs to be fixed
+    private int reviewRating;
+    private String reviewComment;
+    private String userReview;
+    private int userReviewLikes;
+    private int userReviewDislikes;
+    
+    public Community(){
+        this.reviewRating = 0;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+    
+    public int reviewRatingValue(Game game){
+        return game.getRating();
+    }
+    
+    public void gameRating(Game game, int reviewRating){
+        if(reviewRating >= 0 && reviewRating <= 5){
+            System.out.println("valid");
+            game.setRating(reviewRating);
+            System.out.println("You reviewd " + game.getName() + " a " + reviewRating);
+        }
+        else{
+            System.out.println("false");
+        }
+        
+        // else if(reviewRating == 1){
+            // System.out.println("You reviewd " + gameName + " a 1");
+        // }
+        // else if(reviewRating == 2){
+            // System.out.println("You reviewd " + gameName + " a 2");
+        // }
+        // else if(reviewRating == 3){
+            // System.out.println("You reviewd " + gameName + " a 3");
+        // }
+        // else if(reviewRating == 4){
+            // System.out.println("You reviewd " + gameName + " a 4");
+        // }
+        // else if(reviewRating == 5){
+            // System.out.println("You reviewd " + gameName + " a 5");
+        // }
+        // else{
+            // System.out.println("You need to input a valid game rating");
+        // }
     }
 }
