@@ -18,19 +18,26 @@ public class GameLibrary
     public GameLibrary() {
         library = new HashSet<>();
         sc = new Scanner(System.in);
-        //printMenu();
+        printMenu();
     }
 
     public void addGame(Game game) {
         library.add(game);
     }
 
+    public void addNewGame() {
+        System.out.println("Enter game title:");
+        String name = sc.nextLine();
+        addGame(new Game(name));
+        System.out.println(name + " has been added to your library!");
+        endTask();
+    }
+    
     public void printGameDetails(String game) {
         for (Game g : library) {
-            //if (library.contains(game)) {
             if (g.getName() == game) {
                 System.out.println("Name: " + g.getName());
-                System.out.println("Tags: " + g.getTags());
+                System.out.println("Tags: " + g.getGenreTags());
                 System.out.println("Rating: " + g.getRating());
             }
         }
@@ -51,37 +58,43 @@ public class GameLibrary
         System.out.println("0. EXIT");
 
         while (!exit) {
-            if (sc.nextLine().contains("0")) {
+            if (sc.nextLine().equals("0")) {
                 exit = true;
             }
-            else if (sc.nextLine().contains("1")) {
+            else if (sc.nextLine().equals("1")) {
 
             }
-            else if (sc.nextLine().contains("2")) {
+            else if (sc.nextLine().equals("2")) {
                 System.out.println(library.toArray());
             }
-            else if (sc.nextLine().contains("3")) {
+            else if (sc.nextLine().equals("3")) {
 
             }
-            else if (sc.nextLine().contains("4")) {
+            else if (sc.nextLine().equals("4")) {
 
             }
-            else if (sc.nextLine().contains("5")) {
+            else if (sc.nextLine().equals("5")) {
 
             }
-            else if (sc.nextLine().contains("6")) {
+            else if (sc.nextLine().equals("6")) {
 
             }
-            else if (sc.nextLine().contains("7")) {
+            else if (sc.nextLine().equals("7")) {
 
             }
-            else if (sc.nextLine().contains("8")) {
+            else if (sc.nextLine().equals("8")) {
 
             }
-            else if (sc.nextLine().contains("9")) {
-
+            else if (sc.nextLine().equals("9")) {
+                addNewGame();
             }
         }
 
+    }
+    
+    public void endTask() {
+        System.out.println("Press Enter to return to menu...");
+        sc.nextLine();
+        printMenu();
     }
 }

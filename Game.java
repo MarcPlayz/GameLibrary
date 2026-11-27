@@ -1,4 +1,5 @@
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 /**
  * Write a description of class Game here.
@@ -69,21 +70,16 @@ public class Game{
         return rating;
     }
 
-    public String getTags() {
+    public String getGenreTags() {
+        Iterator<Genre> it = genreTags.iterator();
         String t = "";
-        for (int i = 0; i < tags.length; i++) {
-            if (i == 0) {
-                t = t + tags[i].toString();
+        while (it.hasNext()) {
+            Genre g = it.next();
+            t = t + g;
+            if (it.hasNext()) {
+                t = t + ", ";
             }
-            else {
-                t = t + ", " + tags[i].toString();
-            }            
         }
         return t;
     }
-
-    public void getGenreTags(){
-        System.out.println(genreTags);
-    }
-
 }
